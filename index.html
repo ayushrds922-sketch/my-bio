@@ -20,41 +20,40 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start; /* Upar align karne ke liye */
       background: #090b14;
       background-image: 
         radial-gradient(at 0% 0%, rgba(236, 72, 153, 0.22) 0px, transparent 50%),
         radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.25) 0px, transparent 50%),
         radial-gradient(at 50% 50%, rgba(14, 165, 233, 0.15) 0px, transparent 60%);
-      padding: 24px 16px;
+      padding: 18px 16px 40px; /* Top se proper tight gap */
       color: #ffffff;
     }
 
     .container {
       max-width: 410px;
       width: 100%;
-      background: rgba(18, 22, 38, 0.85);
+      background: rgba(18, 22, 38, 0.88);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 36px;
-      padding: 34px 22px 28px;
+      border-radius: 32px;
+      padding: 24px 20px 24px;
       text-align: center;
-      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
       position: relative;
     }
 
-    /* Top Action Dots */
     .top-bar {
       display: flex;
       justify-content: flex-end;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
     .more-btn {
       background: rgba(255, 255, 255, 0.08);
       border: none;
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       color: #94a3b8;
       display: flex;
@@ -64,11 +63,11 @@
       cursor: pointer;
     }
 
-    /* Top Profile Avatar */
+    /* Avatar */
     .avatar-wrapper {
-      width: 96px;
-      height: 96px;
-      margin: 0 auto 16px;
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 12px;
       position: relative;
     }
     .avatar-ring {
@@ -85,54 +84,54 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 38px;
+      font-size: 36px;
       font-weight: 800;
       color: #38bdf8;
       border: 2px solid #090b14;
     }
 
-    /* Title & Bio */
+    /* Text details */
     .name-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     h1 {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: -0.3px;
     }
     .badge-icon {
       color: #38bdf8;
-      font-size: 17px;
+      font-size: 16px;
     }
     .role {
       color: #94a3b8;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 500;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
     .bio-text {
       color: #cbd5e1;
-      font-size: 12.5px;
+      font-size: 12px;
       line-height: 1.5;
-      padding: 0 10px;
-      margin-bottom: 22px;
+      padding: 0 8px;
+      margin-bottom: 18px;
     }
 
-    /* Social Icon Row */
+    /* Social row */
     .social-row {
       display: flex;
       justify-content: center;
       gap: 12px;
-      margin-bottom: 26px;
+      margin-bottom: 20px;
     }
     .social-btn {
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -140,7 +139,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 15px;
+      font-size: 14px;
       text-decoration: none;
       transition: all 0.2s;
     }
@@ -149,11 +148,11 @@
       background: rgba(255, 255, 255, 0.15);
     }
 
-    /* Links Stack */
+    /* Links stack */
     .links-list {
       display: flex;
       flex-direction: column;
-      gap: 13px;
+      gap: 12px;
     }
 
     .link-card {
@@ -165,12 +164,10 @@
       transition: all 0.2s ease;
       cursor: pointer;
     }
-
     .link-card:active {
       transform: scale(0.98);
     }
 
-    /* Featured AI Prompt Card (Special Highlight with Photo Logo) */
     .featured-ai {
       background: linear-gradient(135deg, rgba(236, 72, 153, 0.95), rgba(139, 92, 246, 0.92));
       color: #ffffff;
@@ -178,17 +175,12 @@
       border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
-    /* Standard Card */
     .standard-card {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.07);
       color: #ffffff;
     }
-    .standard-card:hover {
-      background: rgba(255, 255, 255, 0.08);
-    }
 
-    /* Image Logo Inside Link Button */
     .btn-logo-img {
       width: 44px;
       height: 44px;
@@ -200,7 +192,6 @@
       flex-shrink: 0;
     }
 
-    /* Icon Box for other items */
     .btn-icon-box {
       width: 44px;
       height: 44px;
@@ -211,23 +202,22 @@
       font-size: 18px;
       margin-right: 14px;
       flex-shrink: 0;
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
     }
-    .icon-cyan { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
-    .icon-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
 
-    /* Texts inside Button */
     .btn-content {
       flex: 1;
       text-align: left;
     }
     .btn-title {
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: 2px;
     }
     .btn-subtitle {
-      font-size: 11.5px;
+      font-size: 11px;
       opacity: 0.8;
       font-weight: 500;
     }
@@ -235,12 +225,11 @@
     .arrow-icon {
       font-size: 13px;
       opacity: 0.7;
-      margin-left: 10px;
+      margin-left: 8px;
     }
 
-    /* Footer */
     .footer-text {
-      margin-top: 26px;
+      margin-top: 22px;
       font-size: 11px;
       color: #64748b;
       font-weight: 500;
@@ -254,13 +243,11 @@
       <button class="more-btn" aria-label="options"><i class="fa-solid fa-ellipsis"></i></button>
     </div>
 
-    <!-- Main Avatar -->
     <div class="avatar-wrapper">
       <div class="avatar-ring"></div>
       <div class="main-avatar">A</div>
     </div>
 
-    <!-- User Details -->
     <div class="name-badge">
       <h1>Aayush Rd</h1>
       <i class="fa-solid fa-circle-check badge-icon"></i>
@@ -271,7 +258,6 @@
       Explore my AI photo prompt generator & tools below.
     </p>
 
-    <!-- Social Icon Shortcuts -->
     <div class="social-row">
       <a href="https://instagram.com/aro_ayush" target="_blank" class="social-btn" onclick="playClickSound(event)">
         <i class="fa-brands fa-instagram"></i>
@@ -284,10 +270,8 @@
       </a>
     </div>
 
-    <!-- Links List -->
     <div class="links-list">
-
-      <!-- MAIN FEATURED AI PROMPT WEBSITE WITH YOUR PHOTO LOGO -->
+      <!-- AI Image Prompt Generator Button with photo -->
       <a href="https://ayushdlpr.site" target="_blank" class="link-card featured-ai" onclick="playClickSound(event)">
         <img src="profile.jpg" alt="AI Generator Logo" class="btn-logo-img">
         <div class="btn-content">
@@ -297,9 +281,9 @@
         <i class="fa-solid fa-chevron-right arrow-icon"></i>
       </a>
 
-      <!-- Direct Instagram Link -->
+      <!-- Instagram Button -->
       <a href="https://instagram.com/aro_ayush" target="_blank" class="link-card standard-card" onclick="playClickSound(event)">
-        <div class="btn-icon-box icon-purple">
+        <div class="btn-icon-box">
           <i class="fa-brands fa-instagram"></i>
         </div>
         <div class="btn-content">
@@ -308,7 +292,6 @@
         </div>
         <i class="fa-solid fa-chevron-right arrow-icon"></i>
       </a>
-
     </div>
 
     <div class="footer-text">
