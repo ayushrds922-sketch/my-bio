@@ -41,7 +41,6 @@
       box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.65);
     }
 
-    /* Top Centered Profile Header */
     .profile-header {
       display: flex;
       flex-direction: column;
@@ -99,7 +98,6 @@
       margin-top: 3px;
     }
 
-    /* Section Label */
     .section-title {
       font-size: 11px;
       font-weight: 700;
@@ -111,7 +109,6 @@
       padding-left: 4px;
     }
 
-    /* Services List */
     .services-list {
       display: flex;
       flex-direction: column;
@@ -131,7 +128,6 @@
       transform: scale(0.98);
     }
 
-    /* Featured Service (AI Prompts) */
     .featured-service {
       background: linear-gradient(135deg, rgba(236, 72, 153, 0.9), rgba(139, 92, 246, 0.9));
       color: #ffffff;
@@ -149,7 +145,6 @@
       flex-shrink: 0;
     }
 
-    /* Secondary Compact Service Cards */
     .standard-service {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.07);
@@ -195,11 +190,10 @@
 <body onclick="playClickSound()">
 
   <div class="container">
-    <!-- Top Centered Header with Your Actual Logo -->
     <div class="profile-header">
       <div class="avatar-wrapper">
         <div class="avatar-ring"></div>
-        <img src="logo.png" alt="Aayush Logo" class="main-avatar-img" onerror="this.src='profile.jpg'">
+        <img src="logo.png" alt="Aayush Rd" class="main-avatar-img">
       </div>
       <div class="name-badge">
         <h1>Aayush Rd</h1>
@@ -208,12 +202,9 @@
       <div class="role">Software Developer</div>
     </div>
 
-    <!-- Services Header -->
     <div class="section-title">Featured Services</div>
 
-    <!-- Services Items List -->
     <div class="services-list">
-      <!-- Service 1: AI Prompt Generator -->
       <a href="https://ayushdlpr.site" target="_blank" class="service-card featured-service" onclick="playClickSound(event)">
         <img src="profile.jpg" alt="AI Generator" class="service-img">
         <div class="service-details">
@@ -223,7 +214,6 @@
         <i class="fa-solid fa-chevron-right arrow-icon"></i>
       </a>
 
-      <!-- Service 2: Instagram Contact -->
       <a href="https://instagram.com/aro_ayush" target="_blank" class="service-card standard-service" onclick="playClickSound(event)">
         <div class="service-icon">
           <i class="fa-brands fa-instagram"></i>
