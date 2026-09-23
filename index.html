@@ -3,100 +3,329 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aayush Rd | Bio</title>
+  <title>Aayush Rd | Premium Bio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap');
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     body {
-      background: radial-gradient(circle at top, #1e1b4b, #0f172a, #020617);
-      color: #f8fafc;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      padding: 24px;
+      background: #060813;
+      padding: 24px 16px;
+      position: relative;
+      overflow-x: hidden;
     }
-    .card {
-      background: rgba(30, 41, 59, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      max-width: 390px;
+
+    /* Ambient Glowing Orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.6;
+      z-index: 0;
+      animation: floatOrb 8s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    .orb-1 {
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(135deg, #ff007f, #7928ca);
+      top: -40px;
+      left: -50px;
+    }
+    .orb-2 {
+      width: 250px;
+      height: 250px;
+      background: linear-gradient(135deg, #00f2fe, #4facfe);
+      bottom: -30px;
+      right: -40px;
+      animation-duration: 10s;
+      animation-delay: -3s;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(40px, 50px) scale(1.15); }
+    }
+
+    /* Outer Animated Neon Border */
+    .card-wrapper {
+      position: relative;
+      max-width: 400px;
       width: 100%;
-      border-radius: 24px;
-      padding: 36px 24px;
+      border-radius: 30px;
+      padding: 2px;
+      background: linear-gradient(60deg, #ff007f, #00f2fe, #9b51e0, #ff007f);
+      background-size: 300% 300%;
+      animation: borderFlow 5s ease infinite;
+      box-shadow: 0 15px 40px -10px rgba(0, 242, 254, 0.3), 0 0 50px -15px rgba(255, 0, 127, 0.3);
+      z-index: 1;
+    }
+
+    @keyframes borderFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Glass Card */
+    .card {
+      background: rgba(13, 17, 34, 0.85);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border-radius: 28px;
+      padding: 38px 24px;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    /* Avatar Glow */
+    .avatar-box {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 20px;
+    }
+    .avatar-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00f2fe, #ff007f);
+      animation: rotateRing 4s linear infinite;
+      filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.8));
+    }
+    @keyframes rotateRing {
+      100% { transform: rotate(360deg); }
     }
     .avatar {
-      width: 96px;
-      height: 96px;
+      position: absolute;
+      inset: 4px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #06b6d4, #6366f1);
-      margin: 0 auto 18px;
+      background: radial-gradient(circle, #1a2245, #080c1d);
       display: flex;
-      justify-content: center;
       align-items: center;
-      font-size: 38px;
-      font-weight: 800;
-      color: #ffffff;
-      box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
+      justify-content: center;
+      font-size: 44px;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 0 0 20px #00f2fe;
     }
-    h1 {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
+
+    /* Badge & Info */
+    .name-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
       margin-bottom: 4px;
     }
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+    .verified {
+      color: #00f2fe;
+      font-size: 20px;
+      filter: drop-shadow(0 0 8px #00f2fe);
+    }
     .username {
-      color: #38bdf8;
-      font-size: 14px;
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-    p.tagline {
-      color: #94a3b8;
+      display: inline-block;
       font-size: 13px;
-      line-height: 1.5;
-      margin-bottom: 26px;
+      font-weight: 600;
+      background: linear-gradient(90deg, #ff007f, #00f2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
     }
+
+    /* Bio Box */
+    .bio-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-bottom: 26px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #cbd5e1;
+    }
+    .bio-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* Links Container */
     .links {
       display: flex;
       flex-direction: column;
-      gap: 13px;
+      gap: 15px;
     }
-    .links a {
+
+    .link-btn {
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #f1f5f9;
+      padding: 16px 20px;
+      border-radius: 18px;
       text-decoration: none;
-      padding: 13px 18px;
-      border-radius: 14px;
+      font-weight: 700;
       font-size: 15px;
-      font-weight: 600;
-      transition: all 0.25s ease;
+      color: #fff;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
     }
-    .links a:hover, .links a:active {
-      background: linear-gradient(135deg, #06b6d4, #6366f1);
-      border-color: transparent;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+
+    .link-btn i {
+      font-size: 20px;
+      margin-right: 14px;
+      width: 25px;
+      text-align: center;
+    }
+
+    .link-btn span {
+      flex: 1;
+      text-align: left;
+    }
+
+    .arrow-icon {
+      font-size: 13px !important;
+      opacity: 0.5;
+      transition: transform 0.3s;
+    }
+
+    /* Individual Glowing Buttons */
+    .btn-insta {
+      background: linear-gradient(135deg, #fd1d1d, #833ab4, #405de6);
+      background-size: 200% 200%;
+      animation: shiftGrad 4s ease infinite;
+    }
+    .btn-web {
+      background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc);
+    }
+    .btn-git {
+      background: linear-gradient(135deg, #24292e, #161b22, #30363d);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+    }
+
+    @keyframes shiftGrad {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .link-btn:active {
+      transform: scale(0.96);
+      filter: brightness(1.2);
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #64748b;
+      letter-spacing: 1px;
     }
   </style>
 </head>
-<body>
-  <div class="card">
-    <div class="avatar">A</div>
-    <h1>Aayush Rd</h1>
-    <div class="username">@aro_ayush</div>
-    <p class="tagline">💻 Software Developer<br>📱 Apps • Websites • Games<br>💡 Turning Ideas Into Reality</p>
-    <div class="links">
-      <a href="https://instagram.com/aro_ayush" target="_blank">📸 Follow on Instagram</a>
-      <a href="https://ayushdlpr.site" target="_blank">🚀 Visit My Website</a>
-      <a href="https://github.com/ayushrds922-sketch" target="_blank">🌐 GitHub Profile</a>
+<body onclick="playClickSound()">
+
+  <!-- Ambient Light Circles -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="card-wrapper">
+    <div class="card">
+      
+      <!-- Glowing Animated Avatar -->
+      <div class="avatar-box">
+        <div class="avatar-ring"></div>
+        <div class="avatar">A</div>
+      </div>
+
+      <!-- Name & Badge -->
+      <div class="name-badge">
+        <h1>Aayush Rd</h1>
+        <i class="fa-solid fa-circle-check verified"></i>
+      </div>
+      <div class="username">@aro_ayush</div>
+
+      <!-- Cool Bio -->
+      <div class="bio-box">
+        <div class="bio-item">💻 <span>Software Developer</span></div>
+        <div class="bio-item">📱 <span>Apps • Websites • Games</span></div>
+        <div class="bio-item">💡 <span>Turning Ideas Into Reality</span></div>
+      </div>
+
+      <!-- Colorful Neon Buttons -->
+      <div class="links">
+        <a href="https://instagram.com/aro_ayush" target="_blank" class="link-btn btn-insta" onclick="playClickSound(event)">
+          <i class="fa-brands fa-instagram"></i>
+          <span>Follow on Instagram</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <a href="https://ayushdlpr.site" target="_blank" class="link-btn btn-web" onclick="playClickSound(event)">
+          <i class="fa-solid fa-rocket"></i>
+          <span>Official Website</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <a href="https://github.com/ayushrds922-sketch" target="_blank" class="link-btn btn-git" onclick="playClickSound(event)">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub Portfolio</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </a>
+      </div>
+
+      <div class="footer">
+        ⚡ DEVELOPED BY AAYUSH RD
+      </div>
+
     </div>
   </div>
+
+  <!-- Sound Engine (Web Audio API - No external mp3 required) -->
+  <script>
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function playClickSound(e) {
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.08);
+
+      gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.08);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.08);
+    }
+  </script>
 </body>
 </html>
