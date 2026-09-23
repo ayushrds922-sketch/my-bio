@@ -27,7 +27,6 @@
       overflow-x: hidden;
     }
 
-    /* Ambient Glow Circles */
     .orb {
       position: fixed;
       border-radius: 50%;
@@ -40,14 +39,14 @@
     .orb-1 {
       width: 290px;
       height: 290px;
-      background: linear-gradient(135deg, #00f2fe, #4facfe);
+      background: linear-gradient(135deg, #ff007f, #7928ca);
       top: -40px;
       left: -50px;
     }
     .orb-2 {
       width: 260px;
       height: 260px;
-      background: linear-gradient(135deg, #ff007f, #7928ca);
+      background: linear-gradient(135deg, #00f2fe, #4facfe);
       bottom: -30px;
       right: -40px;
       animation-duration: 10s;
@@ -59,14 +58,13 @@
       100% { transform: translate(40px, 50px) scale(1.15); }
     }
 
-    /* Animated Neon Card Border */
     .card-wrapper {
       position: relative;
       max-width: 400px;
       width: 100%;
       border-radius: 30px;
       padding: 2px;
-      background: linear-gradient(60deg, #00f2fe, #ff007f, #9b51e0, #00f2fe);
+      background: linear-gradient(60deg, #ff007f, #00f2fe, #9b51e0, #ff007f);
       background-size: 300% 300%;
       animation: borderFlow 5s ease infinite;
       box-shadow: 0 15px 40px -10px rgba(0, 242, 254, 0.35), 0 0 50px -15px rgba(255, 0, 127, 0.3);
@@ -79,22 +77,20 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Glass Container */
     .card {
       background: rgba(13, 17, 34, 0.88);
       backdrop-filter: blur(25px);
       -webkit-backdrop-filter: blur(25px);
       border-radius: 28px;
-      padding: 40px 24px 34px;
+      padding: 38px 24px 34px;
       text-align: center;
       position: relative;
     }
 
-    /* Glowing Rotating Avatar */
     .avatar-box {
       position: relative;
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       margin: 0 auto 20px;
     }
     .avatar-ring {
@@ -103,26 +99,21 @@
       border-radius: 50%;
       background: linear-gradient(135deg, #00f2fe, #ff007f);
       animation: rotateRing 4s linear infinite;
-      filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.8));
+      filter: drop-shadow(0 0 16px rgba(0, 242, 254, 0.8));
     }
     @keyframes rotateRing {
       100% { transform: rotate(360deg); }
     }
-    .avatar {
+    .avatar-img {
       position: absolute;
       inset: 4px;
       border-radius: 50%;
-      background: radial-gradient(circle, #1a2245, #080c1d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 44px;
-      font-weight: 900;
-      color: #fff;
-      text-shadow: 0 0 20px #00f2fe;
+      width: calc(100% - 8px);
+      height: calc(100% - 8px);
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.2);
     }
 
-    /* Name & Badges */
     .name-badge {
       display: inline-flex;
       align-items: center;
@@ -145,7 +136,7 @@
       display: inline-block;
       font-size: 13px;
       font-weight: 700;
-      background: linear-gradient(90deg, #00f2fe, #ff007f);
+      background: linear-gradient(90deg, #ff007f, #00f2fe);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 20px;
@@ -153,13 +144,12 @@
       letter-spacing: 1.5px;
     }
 
-    /* Bio Details */
     .bio-box {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 18px;
       padding: 16px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
       font-size: 13.5px;
       line-height: 1.9;
       color: #cbd5e1;
@@ -171,7 +161,6 @@
       gap: 8px;
     }
 
-    /* Main Featured Action Button */
     .btn-primary-ai {
       position: relative;
       display: flex;
@@ -183,18 +172,18 @@
       font-weight: 800;
       font-size: 16px;
       color: #ffffff;
-      background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc);
+      background: linear-gradient(135deg, #ff007f, #7928ca, #00f2fe);
       background-size: 200% 200%;
       animation: pulseBtn 3s ease infinite;
-      box-shadow: 0 10px 30px -5px rgba(67, 100, 247, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      box-shadow: 0 10px 30px -5px rgba(255, 0, 127, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4);
       border: 1px solid rgba(255, 255, 255, 0.2);
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     @keyframes pulseBtn {
-      0% { background-position: 0% 50%; box-shadow: 0 10px 30px -5px rgba(67, 100, 247, 0.6); }
+      0% { background-position: 0% 50%; box-shadow: 0 10px 30px -5px rgba(255, 0, 127, 0.6); }
       50% { background-position: 100% 50%; box-shadow: 0 15px 40px -3px rgba(0, 242, 254, 0.8); }
-      100% { background-position: 0% 50%; box-shadow: 0 10px 30px -5px rgba(67, 100, 247, 0.6); }
+      100% { background-position: 0% 50%; box-shadow: 0 10px 30px -5px rgba(255, 0, 127, 0.6); }
     }
 
     .btn-primary-ai i.main-icon {
@@ -208,7 +197,6 @@
     .btn-primary-ai i.arrow {
       font-size: 14px;
       opacity: 0.8;
-      transition: transform 0.2s;
     }
 
     .btn-primary-ai:active {
@@ -216,7 +204,7 @@
     }
 
     .footer {
-      margin-top: 30px;
+      margin-top: 28px;
       font-size: 11px;
       color: #64748b;
       letter-spacing: 1.5px;
@@ -226,37 +214,32 @@
 </head>
 <body onclick="playClickSound()">
 
-  <!-- Ambient Lights -->
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
 
   <div class="card-wrapper">
     <div class="card">
       
-      <!-- Glowing Animated Avatar -->
       <div class="avatar-box">
         <div class="avatar-ring"></div>
-        <div class="avatar">A</div>
+        <img src="profile.jpg" alt="Profile Logo" class="avatar-img">
       </div>
 
-      <!-- Name & Badge -->
       <div class="name-badge">
         <h1>Aayush Rd</h1>
         <i class="fa-solid fa-circle-check verified"></i>
       </div>
-      <div class="username">AI PROMPT HUB</div>
+      <div class="username">AI IMAGE PROMPT HUB</div>
 
-      <!-- Bio Info -->
       <div class="bio-box">
-        <div class="bio-item">🤖 <span>AI Prompt Generator</span></div>
-        <div class="bio-item">⚡ <span>Custom Prompts & Tools</span></div>
-        <div class="bio-item">💡 <span>Turning Ideas Into Reality</span></div>
+        <div class="bio-item">🎨 <span>AI Image Prompt Generator</span></div>
+        <div class="bio-item">✨ <span>Trending Viral Prompts</span></div>
+        <div class="bio-item">🚀 <span>One-Click Prompt Copy</span></div>
       </div>
 
-      <!-- Only Single Main AI Prompt Website Button -->
       <a href="https://ayushdlpr.site" target="_blank" class="btn-primary-ai" onclick="playClickSound(event)">
         <i class="fa-solid fa-wand-magic-sparkles main-icon"></i>
-        <span>Explore AI Prompts</span>
+        <span>Generate AI Prompts</span>
         <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
       </a>
 
@@ -267,7 +250,6 @@
     </div>
   </div>
 
-  <!-- Sound Effect Script -->
   <script>
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
