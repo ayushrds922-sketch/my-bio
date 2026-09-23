@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aayush Rd | Links</title>
+  <title>Aayush Rd | Services & Prompts</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
     * {
       box-sizing: border-box;
@@ -23,41 +23,44 @@
       align-items: flex-start;
       background: #090b14;
       background-image: 
-        radial-gradient(at 0% 0%, rgba(236, 72, 153, 0.2) 0px, transparent 40%),
-        radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.2) 0px, transparent 40%);
-      padding: 12px 14px;
+        radial-gradient(at 50% 0%, rgba(236, 72, 153, 0.22) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.2) 0px, transparent 50%);
+      padding: 16px 14px 40px;
       color: #ffffff;
     }
 
     .container {
-      max-width: 390px;
+      max-width: 400px;
       width: 100%;
-      background: rgba(18, 22, 38, 0.9);
+      background: rgba(18, 22, 38, 0.92);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-      padding: 14px 16px 14px;
-      text-align: center;
-      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6);
+      border-radius: 28px;
+      padding: 22px 18px 20px;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.65);
     }
 
-    .header-row {
+    /* Top Centered Profile Header */
+    .profile-header {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 8px;
+      text-align: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      margin-bottom: 16px;
     }
 
     .avatar-wrapper {
-      width: 52px;
-      height: 52px;
+      width: 68px;
+      height: 68px;
       position: relative;
-      flex-shrink: 0;
+      margin-bottom: 10px;
     }
     .avatar-ring {
       position: absolute;
-      inset: -2px;
+      inset: -3px;
       border-radius: 50%;
       background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
     }
@@ -65,168 +68,172 @@
       position: absolute;
       inset: 2px;
       border-radius: 50%;
-      background: #151a30;
+      background: #13182c;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 26px;
       font-weight: 800;
       color: #38bdf8;
       border: 2px solid #090b14;
     }
 
-    .user-info {
-      text-align: left;
-      flex: 1;
-      margin-left: 12px;
-    }
     .name-badge {
       display: flex;
       align-items: center;
-      gap: 5px;
+      justify-content: center;
+      gap: 6px;
     }
     h1 {
-      font-size: 17px;
+      font-size: 20px;
       font-weight: 800;
       color: #ffffff;
-      line-height: 1.2;
+      letter-spacing: -0.2px;
     }
     .badge-icon {
       color: #38bdf8;
-      font-size: 14px;
+      font-size: 16px;
     }
+
     .role {
       color: #94a3b8;
-      font-size: 11.5px;
-      font-weight: 500;
-      margin-top: 1px;
-    }
-
-    .more-btn {
-      background: rgba(255, 255, 255, 0.06);
-      border: none;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      color: #94a3b8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-size: 12px;
+      font-weight: 600;
+      margin-top: 3px;
     }
 
-    /* Compact Links */
-    .links-list {
+    /* Section Label */
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #64748b;
+      margin-bottom: 10px;
+      text-align: left;
+      padding-left: 4px;
+    }
+
+    /* Services List */
+    .services-list {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-top: 6px;
+      gap: 10px;
     }
 
-    .link-card {
+    .service-card {
       display: flex;
       align-items: center;
-      padding: 9px 12px;
-      border-radius: 14px;
+      padding: 10px 12px;
+      border-radius: 16px;
       text-decoration: none;
       transition: all 0.2s ease;
+      cursor: pointer;
     }
-    .link-card:active {
+    .service-card:active {
       transform: scale(0.98);
     }
 
-    .featured-ai {
-      background: linear-gradient(135deg, rgba(236, 72, 153, 0.95), rgba(139, 92, 246, 0.92));
+    /* Featured Service (AI Prompts) */
+    .featured-service {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.9), rgba(139, 92, 246, 0.9));
       color: #ffffff;
-      box-shadow: 0 6px 18px -4px rgba(236, 72, 153, 0.45);
+      box-shadow: 0 8px 20px -4px rgba(236, 72, 153, 0.4);
       border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
-    .standard-card {
-      background: rgba(255, 255, 255, 0.05);
+    .service-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-right: 12px;
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      flex-shrink: 0;
+    }
+
+    /* Secondary Compact Service Cards */
+    .standard-service {
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.07);
       color: #ffffff;
     }
 
-    .btn-logo-img {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      object-fit: cover;
-      margin-right: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      flex-shrink: 0;
-    }
-
-    .btn-icon-box {
-      width: 36px;
-      height: 36px;
+    .service-icon {
+      width: 38px;
+      height: 38px;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 16px;
-      margin-right: 10px;
+      margin-right: 12px;
       flex-shrink: 0;
       background: rgba(168, 85, 247, 0.15);
       color: #c084fc;
     }
 
-    .btn-content {
+    .service-details {
       flex: 1;
       text-align: left;
     }
-    .btn-title {
-      font-size: 13px;
+    .service-name {
+      font-size: 13.5px;
       font-weight: 700;
-      line-height: 1.15;
+      line-height: 1.2;
     }
-    .btn-subtitle {
-      font-size: 10.5px;
+    .service-desc {
+      font-size: 11px;
       opacity: 0.8;
+      margin-top: 2px;
     }
 
     .arrow-icon {
-      font-size: 11px;
+      font-size: 12px;
       opacity: 0.7;
+      margin-left: 8px;
     }
   </style>
 </head>
 <body onclick="playClickSound()">
 
   <div class="container">
-    <div class="header-row">
+    <!-- Centered Name & Avatar -->
+    <div class="profile-header">
       <div class="avatar-wrapper">
         <div class="avatar-ring"></div>
         <div class="main-avatar">A</div>
       </div>
-      <div class="user-info">
-        <div class="name-badge">
-          <h1>Aayush Rd</h1>
-          <i class="fa-solid fa-circle-check badge-icon"></i>
-        </div>
-        <div class="role">Software Developer • AI Prompt Hub</div>
+      <div class="name-badge">
+        <h1>Aayush Rd</h1>
+        <i class="fa-solid fa-circle-check badge-icon"></i>
       </div>
-      <button class="more-btn"><i class="fa-solid fa-ellipsis"></i></button>
+      <div class="role">Software Developer</div>
     </div>
 
-    <div class="links-list">
-      <a href="https://ayushdlpr.site" target="_blank" class="link-card featured-ai" onclick="playClickSound(event)">
-        <img src="profile.jpg" alt="AI Logo" class="btn-logo-img">
-        <div class="btn-content">
-          <div class="btn-title">AI Image Prompt Generator</div>
-          <div class="btn-subtitle">ayushdlpr.site • Tap to open</div>
+    <!-- Services Header -->
+    <div class="section-title">Featured Services</div>
+
+    <!-- Services Items List -->
+    <div class="services-list">
+      <!-- Service 1: AI Prompt Generator -->
+      <a href="https://ayushdlpr.site" target="_blank" class="service-card featured-service" onclick="playClickSound(event)">
+        <img src="profile.jpg" alt="AI Generator" class="service-img">
+        <div class="service-details">
+          <div class="service-name">AI Image Prompt Generator</div>
+          <div class="service-desc">ayushdlpr.site • Tap to generate</div>
         </div>
         <i class="fa-solid fa-chevron-right arrow-icon"></i>
       </a>
 
-      <a href="https://instagram.com/aro_ayush" target="_blank" class="link-card standard-card" onclick="playClickSound(event)">
-        <div class="btn-icon-box">
+      <!-- Service 2: Instagram Contact -->
+      <a href="https://instagram.com/aro_ayush" target="_blank" class="service-card standard-service" onclick="playClickSound(event)">
+        <div class="service-icon">
           <i class="fa-brands fa-instagram"></i>
         </div>
-        <div class="btn-content">
-          <div class="btn-title">Follow on Instagram</div>
-          <div class="btn-subtitle">@aro_ayush</div>
+        <div class="service-details">
+          <div class="service-name">Follow on Instagram</div>
+          <div class="service-desc">@aro_ayush</div>
         </div>
         <i class="fa-solid fa-chevron-right arrow-icon"></i>
       </a>
