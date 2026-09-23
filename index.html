@@ -53,8 +53,8 @@
     }
 
     .avatar-wrapper {
-      width: 68px;
-      height: 68px;
+      width: 76px;
+      height: 76px;
       position: relative;
       margin-bottom: 10px;
     }
@@ -64,18 +64,15 @@
       border-radius: 50%;
       background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
     }
-    .main-avatar {
+    .main-avatar-img {
       position: absolute;
       inset: 2px;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
       border-radius: 50%;
-      background: #13182c;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      font-weight: 800;
-      color: #38bdf8;
+      object-fit: cover;
       border: 2px solid #090b14;
+      background: #13182c;
     }
 
     .name-badge {
@@ -198,11 +195,11 @@
 <body onclick="playClickSound()">
 
   <div class="container">
-    <!-- Centered Name & Avatar -->
+    <!-- Top Centered Header with Your Actual Logo -->
     <div class="profile-header">
       <div class="avatar-wrapper">
         <div class="avatar-ring"></div>
-        <div class="main-avatar">A</div>
+        <img src="logo.png" alt="Aayush Logo" class="main-avatar-img" onerror="this.src='profile.jpg'">
       </div>
       <div class="name-badge">
         <h1>Aayush Rd</h1>
