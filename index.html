@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aayush Rd | AI Prompt Hub</title>
+  <title>Aayush Rd | Links</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap');
-    
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -21,99 +21,77 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #060813;
+      background: #090b14;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(236, 72, 153, 0.22) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.25) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(14, 165, 233, 0.15) 0px, transparent 60%);
       padding: 24px 16px;
-      position: relative;
-      overflow-x: hidden;
+      color: #ffffff;
     }
 
-    .orb {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.65;
-      z-index: 0;
-      animation: floatOrb 8s ease-in-out infinite alternate;
-      pointer-events: none;
-    }
-    .orb-1 {
-      width: 290px;
-      height: 290px;
-      background: linear-gradient(135deg, #ff007f, #7928ca);
-      top: -40px;
-      left: -50px;
-    }
-    .orb-2 {
-      width: 260px;
-      height: 260px;
-      background: linear-gradient(135deg, #00f2fe, #4facfe);
-      bottom: -30px;
-      right: -40px;
-      animation-duration: 10s;
-      animation-delay: -3s;
-    }
-
-    @keyframes floatOrb {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(40px, 50px) scale(1.15); }
-    }
-
-    .card-wrapper {
-      position: relative;
-      max-width: 400px;
+    .container {
+      max-width: 410px;
       width: 100%;
-      border-radius: 30px;
-      padding: 2px;
-      background: linear-gradient(60deg, #ff007f, #00f2fe, #9b51e0, #ff007f);
-      background-size: 300% 300%;
-      animation: borderFlow 5s ease infinite;
-      box-shadow: 0 15px 40px -10px rgba(0, 242, 254, 0.35), 0 0 50px -15px rgba(255, 0, 127, 0.3);
-      z-index: 1;
-    }
-
-    @keyframes borderFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .card {
-      background: rgba(13, 17, 34, 0.88);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-      border-radius: 28px;
-      padding: 38px 24px 34px;
+      background: rgba(18, 22, 38, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 36px;
+      padding: 34px 22px 28px;
       text-align: center;
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7);
       position: relative;
     }
 
-    .avatar-box {
+    /* Top Action Dots */
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 8px;
+    }
+    .more-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    /* Top Profile Avatar */
+    .avatar-wrapper {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 16px;
       position: relative;
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 20px;
     }
     .avatar-ring {
       position: absolute;
-      inset: -4px;
+      inset: -3px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #00f2fe, #ff007f);
-      animation: rotateRing 4s linear infinite;
-      filter: drop-shadow(0 0 16px rgba(0, 242, 254, 0.8));
+      background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
     }
-    @keyframes rotateRing {
-      100% { transform: rotate(360deg); }
-    }
-    .avatar-img {
+    .main-avatar {
       position: absolute;
-      inset: 4px;
+      inset: 2px;
       border-radius: 50%;
-      width: calc(100% - 8px);
-      height: calc(100% - 8px);
-      object-fit: cover;
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      background: #151a30;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      font-weight: 800;
+      color: #38bdf8;
+      border: 2px solid #090b14;
     }
 
+    /* Title & Bio */
     .name-badge {
       display: inline-flex;
       align-items: center;
@@ -122,131 +100,219 @@
       margin-bottom: 4px;
     }
     h1 {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 800;
-      color: #fff;
-      letter-spacing: 0.5px;
+      color: #ffffff;
+      letter-spacing: -0.3px;
     }
-    .verified {
-      color: #00f2fe;
-      font-size: 20px;
-      filter: drop-shadow(0 0 8px #00f2fe);
+    .badge-icon {
+      color: #38bdf8;
+      font-size: 17px;
     }
-    .username {
-      display: inline-block;
+    .role {
+      color: #94a3b8;
       font-size: 13px;
-      font-weight: 700;
-      background: linear-gradient(90deg, #ff007f, #00f2fe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .bio-text {
+      color: #cbd5e1;
+      font-size: 12.5px;
+      line-height: 1.5;
+      padding: 0 10px;
+      margin-bottom: 22px;
     }
 
-    .bio-box {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 16px;
+    /* Social Icon Row */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
       margin-bottom: 26px;
-      font-size: 13.5px;
-      line-height: 1.9;
-      color: #cbd5e1;
     }
-    .bio-item {
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #f1f5f9;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .social-btn:active {
+      transform: scale(0.92);
+      background: rgba(255, 255, 255, 0.15);
     }
 
-    .btn-primary-ai {
-      position: relative;
+    /* Links Stack */
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .link-card {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 18px 22px;
-      border-radius: 20px;
+      padding: 12px 14px;
+      border-radius: 18px;
       text-decoration: none;
-      font-weight: 800;
-      font-size: 16px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .link-card:active {
+      transform: scale(0.98);
+    }
+
+    /* Featured AI Prompt Card (Special Highlight with Photo Logo) */
+    .featured-ai {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.95), rgba(139, 92, 246, 0.92));
       color: #ffffff;
-      background: linear-gradient(135deg, #ff007f, #7928ca, #00f2fe);
-      background-size: 200% 200%;
-      animation: pulseBtn 3s ease infinite;
-      box-shadow: 0 10px 30px -5px rgba(255, 0, 127, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
-    @keyframes pulseBtn {
-      0% { background-position: 0% 50%; box-shadow: 0 10px 30px -5px rgba(255, 0, 127, 0.6); }
-      50% { background-position: 100% 50%; box-shadow: 0 15px 40px -3px rgba(0, 242, 254, 0.8); }
-      100% { background-position: 0% 50%; box-shadow: 0 10px 30px -5px rgba(255, 0, 127, 0.6); }
+    /* Standard Card */
+    .standard-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      color: #ffffff;
+    }
+    .standard-card:hover {
+      background: rgba(255, 255, 255, 0.08);
     }
 
-    .btn-primary-ai i.main-icon {
-      font-size: 22px;
+    /* Image Logo Inside Link Button */
+    .btn-logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-right: 14px;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0;
     }
-    .btn-primary-ai span {
+
+    /* Icon Box for other items */
+    .btn-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-right: 14px;
+      flex-shrink: 0;
+    }
+    .icon-cyan { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+    .icon-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+
+    /* Texts inside Button */
+    .btn-content {
       flex: 1;
-      text-align: center;
-      letter-spacing: 0.5px;
+      text-align: left;
     }
-    .btn-primary-ai i.arrow {
-      font-size: 14px;
+    .btn-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+    .btn-subtitle {
+      font-size: 11.5px;
       opacity: 0.8;
+      font-weight: 500;
     }
 
-    .btn-primary-ai:active {
-      transform: scale(0.96);
+    .arrow-icon {
+      font-size: 13px;
+      opacity: 0.7;
+      margin-left: 10px;
     }
 
-    .footer {
-      margin-top: 28px;
+    /* Footer */
+    .footer-text {
+      margin-top: 26px;
       font-size: 11px;
       color: #64748b;
-      letter-spacing: 1.5px;
-      font-weight: 600;
+      font-weight: 500;
     }
   </style>
 </head>
 <body onclick="playClickSound()">
 
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
+  <div class="container">
+    <div class="top-bar">
+      <button class="more-btn" aria-label="options"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
 
-  <div class="card-wrapper">
-    <div class="card">
-      
-      <div class="avatar-box">
-        <div class="avatar-ring"></div>
-        <img src="profile.jpg" alt="Profile Logo" class="avatar-img">
-      </div>
+    <!-- Main Avatar -->
+    <div class="avatar-wrapper">
+      <div class="avatar-ring"></div>
+      <div class="main-avatar">A</div>
+    </div>
 
-      <div class="name-badge">
-        <h1>Aayush Rd</h1>
-        <i class="fa-solid fa-circle-check verified"></i>
-      </div>
-      <div class="username">AI IMAGE PROMPT HUB</div>
+    <!-- User Details -->
+    <div class="name-badge">
+      <h1>Aayush Rd</h1>
+      <i class="fa-solid fa-circle-check badge-icon"></i>
+    </div>
+    <div class="role">Software Developer</div>
+    <p class="bio-text">
+      Apps • Websites • Games<br>
+      Explore my AI photo prompt generator & tools below.
+    </p>
 
-      <div class="bio-box">
-        <div class="bio-item">🎨 <span>AI Image Prompt Generator</span></div>
-        <div class="bio-item">✨ <span>Trending Viral Prompts</span></div>
-        <div class="bio-item">🚀 <span>One-Click Prompt Copy</span></div>
-      </div>
+    <!-- Social Icon Shortcuts -->
+    <div class="social-row">
+      <a href="https://instagram.com/aro_ayush" target="_blank" class="social-btn" onclick="playClickSound(event)">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://github.com/ayushrds922-sketch" target="_blank" class="social-btn" onclick="playClickSound(event)">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://ayushdlpr.site" target="_blank" class="social-btn" onclick="playClickSound(event)">
+        <i class="fa-solid fa-globe"></i>
+      </a>
+    </div>
 
-      <a href="https://ayushdlpr.site" target="_blank" class="btn-primary-ai" onclick="playClickSound(event)">
-        <i class="fa-solid fa-wand-magic-sparkles main-icon"></i>
-        <span>Generate AI Prompts</span>
-        <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+    <!-- Links List -->
+    <div class="links-list">
+
+      <!-- MAIN FEATURED AI PROMPT WEBSITE WITH YOUR PHOTO LOGO -->
+      <a href="https://ayushdlpr.site" target="_blank" class="link-card featured-ai" onclick="playClickSound(event)">
+        <img src="profile.jpg" alt="AI Generator Logo" class="btn-logo-img">
+        <div class="btn-content">
+          <div class="btn-title">AI Image Prompt Generator</div>
+          <div class="btn-subtitle">ayushdlpr.site • Tap to generate</div>
+        </div>
+        <i class="fa-solid fa-chevron-right arrow-icon"></i>
       </a>
 
-      <div class="footer">
-        ⚡ CRAFTED BY AAYUSH RD
-      </div>
+      <!-- Direct Instagram Link -->
+      <a href="https://instagram.com/aro_ayush" target="_blank" class="link-card standard-card" onclick="playClickSound(event)">
+        <div class="btn-icon-box icon-purple">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+        <div class="btn-content">
+          <div class="btn-title">Follow on Instagram</div>
+          <div class="btn-subtitle">@aro_ayush</div>
+        </div>
+        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+      </a>
 
+    </div>
+
+    <div class="footer-text">
+      Made with ❤️ by Aayush Rd<br>© 2026 All rights reserved
     </div>
   </div>
 
@@ -261,10 +327,10 @@
       const gain = audioCtx.createGain();
 
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(850, audioCtx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(320, audioCtx.currentTime + 0.08);
+      osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.08);
 
-      gain.gain.setValueAtTime(0.22, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.08);
 
       osc.connect(gain);
